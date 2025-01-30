@@ -2,10 +2,11 @@ CC=gcc
 CFLAGS=-Iinclude -Wall -g
 
 default: main.o heap.o
-	$(CC) $(CFLAGS) build/obj/main.o build/obj/heap.o -o heapsort
+	$(CC) $(CFLAGS) main.o heap.o -o heapsort
+	rm main.o heap.o
 
 main.o:
-	$(CC) $(CFLAGS) -c src/main.c -o build/obj/main.o
+	$(CC) $(CFLAGS) -c src/main.c -o main.o
 
 heap.o:
-	$(CC) $(CFLAGS) -c src/heap.c -o build/obj/heap.o
+	$(CC) $(CFLAGS) -c src/heap.c -o heap.o
